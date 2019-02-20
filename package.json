@@ -1,0 +1,47 @@
+{
+  "name": "vue-ssr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "babel": {
+    "presets": [
+      "env",
+      "vue"
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build && npm run start-server",
+    "build": "npm run build-client && npm run build-server",
+    "build-client": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "build-server": "cross-env NODE_ENV=production webpack --config webpack.server.config.js --progress --hide-modules",
+    "start-server": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-vue": "^2.0.2",
+    "css-loader": "^1.0.1",
+    "file-loader": "^3.0.1",
+    "terser-webpack-plugin": "^1.2.2",
+    "vue-loader": "^15.6.2",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.6",
+    "webpack": "^4.29.4",
+    "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "express": "^4.16.4",
+    "trans97": "^0.1.2",
+    "uglifyjs-webpack-plugin": "^2.1.1",
+    "vue": "^2.6.6",
+    "vue-router": "^3.0.2",
+    "vue-server-renderer": "^2.6.6",
+    "webpack-merge": "^4.2.1"
+  }
+}
